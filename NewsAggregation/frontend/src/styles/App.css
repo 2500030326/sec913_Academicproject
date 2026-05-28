@@ -1,0 +1,531 @@
+/* App.css - Additional App-level styles */
+
+body {
+  background-color: #050816;
+  color: #ffffff;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  main {
+    padding: 16px !important;
+  }
+}
+
+/* Animation utilities */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* NewsSphere split login page */
+.news-login-page {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(760px, 930px) 540px;
+  column-gap: 38px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 54px 44px;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 48% 42%, rgba(31, 92, 255, 0.22), transparent 28%),
+    radial-gradient(circle at 78% 54%, rgba(137, 43, 255, 0.16), transparent 30%),
+    linear-gradient(135deg, #020512 0%, #061126 42%, #02030b 100%);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.news-login-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(2, 4, 15, 0.04), rgba(2, 4, 15, 0.46) 54%, rgba(2, 4, 15, 0.86)),
+    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1800&h=1100&fit=crop") center/cover;
+  opacity: 0.2;
+  filter: saturate(1.35) contrast(1.12) blur(1px);
+}
+
+.news-login-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(0, 212, 255, 0.5) 1px, transparent 1px),
+    radial-gradient(circle, rgba(184, 51, 255, 0.45) 1px, transparent 1px);
+  background-size: 90px 90px, 130px 130px;
+  background-position: 20px 30px, 60px 80px;
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+.news-login-left,
+.news-login-right {
+  position: relative;
+  z-index: 1;
+}
+
+.news-login-left {
+  width: 930px;
+  height: min(916px, calc(100vh - 108px));
+  min-height: 760px;
+}
+
+.news-login-brand {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.news-login-logo,
+.news-login-card-icon {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(184, 51, 255, 0.7);
+  background: linear-gradient(135deg, rgba(184, 51, 255, 0.78), rgba(0, 153, 255, 0.75));
+  box-shadow: 0 0 28px rgba(184, 51, 255, 0.35);
+}
+
+.news-login-logo {
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+}
+
+.news-login-brand h1 {
+  font-size: 43px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.news-login-brand h1 span,
+.news-login-copy h2 span {
+  background: linear-gradient(90deg, #00d4ff, #b833ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.news-login-brand p {
+  margin-top: 12px;
+  color: #c8d0df;
+  font-size: 20px;
+}
+
+.news-login-copy {
+  margin-top: 165px;
+  max-width: 520px;
+}
+
+.news-login-copy h2 {
+  font-size: 56px;
+  line-height: 1.12;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+.news-login-copy h2 span {
+  display: block;
+}
+
+.news-login-copy p {
+  margin-top: 26px;
+  color: #d5d9e4;
+  max-width: 410px;
+  font-size: 20px;
+  line-height: 1.72;
+}
+
+.news-login-visual {
+  position: absolute;
+  left: 360px;
+  top: 6px;
+  width: 560px;
+  height: 820px;
+  pointer-events: none;
+}
+
+.news-world-map {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 44% 48%, rgba(0, 212, 255, 0.2), transparent 28%),
+    radial-gradient(circle at 58% 58%, rgba(184, 51, 255, 0.24), transparent 32%),
+    radial-gradient(circle, rgba(0, 212, 255, 0.5) 1px, transparent 1px);
+  background-size: auto, auto, 12px 12px;
+  mask-image: radial-gradient(ellipse at center, black 0 45%, transparent 72%);
+  opacity: 0.68;
+}
+
+.login-news-card {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 118px;
+  gap: 13px;
+  width: 320px;
+  min-height: 118px;
+  padding: 15px;
+  border: 1px solid rgba(0, 145, 255, 0.58);
+  border-radius: 12px;
+  background: rgba(4, 12, 31, 0.72);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), inset 0 0 22px rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+}
+
+.login-news-card.primary {
+  left: 4px;
+  top: 330px;
+  width: 296px;
+  min-height: 178px;
+  transform: rotate(-4deg);
+  border-color: rgba(184, 51, 255, 0.85);
+}
+
+.login-news-card.top {
+  right: 26px;
+  top: 90px;
+  width: 250px;
+  transform: rotate(-8deg);
+}
+
+.login-news-card.market {
+  right: 0;
+  top: 328px;
+  width: 255px;
+  transform: rotate(-5deg);
+}
+
+.login-news-card.sports {
+  right: 66px;
+  bottom: 108px;
+  width: 250px;
+  transform: rotate(7deg);
+}
+
+.news-card-tag {
+  display: inline-flex;
+  padding: 5px 9px;
+  margin-bottom: 11px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #b833ff, #00d4ff);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.login-news-card h3 {
+  font-size: 16px;
+  font-weight: 850;
+  line-height: 1.42;
+  font-style: italic;
+}
+
+.login-news-card p {
+  margin-top: 14px;
+  color: #aab4c7;
+  font-size: 11px;
+}
+
+.login-news-card img,
+.news-card-chart {
+  width: 120px;
+  height: 88px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.news-card-chart {
+  display: grid;
+  place-items: center;
+  color: #00d4ff;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.16), rgba(184, 51, 255, 0.12));
+}
+
+.news-login-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 92px);
+  gap: 18px;
+  margin-top: 94px;
+  margin-left: 20px;
+}
+
+.news-login-stats > div {
+  padding-right: 18px;
+  border-right: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.stat-icon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 13px;
+  border: 1px solid rgba(184, 51, 255, 0.5);
+  border-radius: 999px;
+  color: #00d4ff;
+  background: rgba(5, 8, 22, 0.6);
+}
+
+.news-login-stats strong {
+  display: block;
+  color: #dffcff;
+  font-size: 27px;
+  font-weight: 900;
+}
+
+.news-login-stats span {
+  color: #cfd6e2;
+  font-size: 16px;
+}
+
+.news-login-quote {
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 760px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d8deea;
+}
+
+.news-login-quote svg {
+  color: #9c36ff;
+  float: left;
+  margin-right: 18px;
+}
+
+.news-login-quote p {
+  font-size: 18px;
+}
+
+.news-login-quote span {
+  display: block;
+  margin-top: 10px;
+  color: #1c8fff;
+  font-size: 18px;
+}
+
+.news-login-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-login-card {
+  width: 540px;
+  min-height: min(910px, calc(100vh - 108px));
+  padding: 52px 44px 43px;
+  border: 1px solid rgba(0, 153, 255, 0.42);
+  border-radius: 26px;
+  background: linear-gradient(145deg, rgba(7, 16, 39, 0.86), rgba(2, 6, 20, 0.82));
+  box-shadow: 0 0 80px rgba(0, 102, 255, 0.16), inset 0 0 34px rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(28px);
+}
+
+.news-login-card-icon {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 34px;
+  border-radius: 20px;
+}
+
+.news-login-card-heading {
+  text-align: center;
+}
+
+.news-login-card-heading h2 {
+  font-size: 38px;
+  font-weight: 900;
+}
+
+.news-login-card-heading p {
+  margin-top: 12px;
+  color: #c5ccda;
+  font-size: 18px;
+}
+
+.news-login-field {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 69px;
+  margin-top: 24px;
+  padding: 0 22px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 14px;
+  color: #a9b6ca;
+  background: rgba(5, 10, 24, 0.46);
+}
+
+.news-login-card-heading + .news-login-field {
+  margin-top: 38px;
+}
+
+.news-login-field + .news-login-field {
+  margin-top: 22px;
+}
+
+.news-login-field input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+}
+
+.news-login-field button {
+  color: #a9b6ca;
+}
+
+.news-login-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px 0 28px;
+  color: #d9deea;
+}
+
+.news-login-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.news-login-options input {
+  width: 20px;
+  height: 20px;
+  accent-color: #8d38ff;
+}
+
+.news-login-options button,
+.news-signup button {
+  color: #00d4ff;
+}
+
+.news-login-error {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 0, 110, 0.4);
+  border-radius: 12px;
+  color: #ff6da8;
+  background: rgba(255, 0, 110, 0.1);
+}
+
+.news-login-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  height: 70px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #9c21ff 0%, #2057ff 55%, #00cfff 100%);
+  box-shadow: 0 0 34px rgba(0, 212, 255, 0.42);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.news-login-submit span {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.news-login-divider {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 34px 0 24px;
+  color: #98a2b7;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.news-login-divider span {
+  height: 1px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.news-social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  width: 100%;
+  height: 64px;
+  margin-top: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  background: rgba(5, 10, 24, 0.42);
+  color: white;
+  font-size: 18px;
+}
+
+.google-mark {
+  color: #4285f4;
+  font-size: 28px;
+  font-weight: 950;
+}
+
+.news-social-button svg {
+  color: white;
+}
+
+.news-signup {
+  margin-top: 34px;
+  text-align: center;
+  color: #d4d9e5;
+  font-size: 18px;
+}
+
+@media (max-width: 1180px) {
+  .news-login-page {
+    grid-template-columns: 1fr;
+    padding: 28px;
+  }
+
+  .news-login-left {
+    display: none;
+  }
+}

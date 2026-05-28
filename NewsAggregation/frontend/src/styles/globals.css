@@ -1,0 +1,154 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: radial-gradient(circle at top, rgba(0, 212, 255, 0.12), transparent 34%), radial-gradient(circle at right, rgba(184, 51, 255, 0.12), transparent 30%), #050816;
+  color: #ffffff;
+}
+
+body.light-mode {
+  background: linear-gradient(180deg, #f8fbff 0%, #dce7ff 100%);
+  color: #071839;
+}
+
+body.dark-mode {
+  background: linear-gradient(180deg, #050816 0%, #090d1a 100%);
+  color: #ffffff;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.glass-morphism {
+  @apply backdrop-blur-xl bg-white/10 border border-white/10 rounded-[1.75rem] shadow-glass-md;
+}
+
+.glass-morphism-lg {
+  @apply backdrop-blur-2xl bg-white/10 border border-white/10 rounded-[2.25rem] shadow-glass-lg;
+}
+
+.shadow-glow-md {
+  box-shadow: 0 25px 60px rgba(0, 212, 255, 0.14), inset 0 0 40px rgba(255, 255, 255, 0.05);
+}
+
+.neon-cyan-glow {
+  @apply shadow-neon-cyan;
+}
+
+.neon-purple-glow {
+  @apply shadow-neon-purple;
+}
+
+.neon-pink-glow {
+  @apply shadow-neon-pink;
+}
+
+.gradient-text {
+  @apply bg-gradient-neon bg-clip-text text-transparent;
+}
+
+.gradient-text-cyber {
+  @apply bg-gradient-cyber bg-clip-text text-transparent;
+}
+
+.transition-smooth {
+  @apply transition-all duration-300 ease-out;
+}
+
+.btn-glow {
+  @apply px-6 py-3 rounded-2xl font-semibold transition-smooth neon-cyan-glow hover:scale-105 active:scale-95;
+}
+
+.btn-gradient {
+  @apply px-6 py-3 rounded-2xl font-semibold bg-gradient-neon text-white transition-smooth hover:shadow-neon-cyan hover:scale-105 active:scale-95;
+}
+
+.card-hover {
+  @apply transition-smooth hover:scale-105 hover:shadow-neon-cyan;
+}
+
+.card-hover-lift {
+  @apply transition-smooth hover:-translate-y-2 hover:shadow-glass-lg;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1026;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00d4ff, #b833ff);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.85;
+}
+
+.skeleton {
+  @apply bg-gradient-card animate-shimmer bg-[length:1000px_100%];
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.8);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+::selection {
+  background: rgba(0, 212, 255, 0.35);
+  color: #071839;
+}
+
+*:focus-visible {
+  outline: 2px solid rgba(0, 212, 255, 0.75);
+  outline-offset: 2px;
+}
